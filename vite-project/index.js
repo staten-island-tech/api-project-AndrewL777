@@ -2,13 +2,14 @@ let url = "https://valorant-api.com/v1/weapons/skins";
 
 async function getData(URL) {
   try {
-    const reponse = await fetch(URL);
-    const data = await repsonse.json();
+    const response = await fetch(URL);
+    const data = await response.json();
     document.getElementById("api-response").textContent = data.data;
   } catch (error) {
     console.log(error);
   }
 }
+console.log(data);
 
 // let response = await fetch(url);
 // if (response.ok) {
