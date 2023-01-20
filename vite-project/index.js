@@ -1,24 +1,15 @@
-let url = "https://valorant-api.com/v1/weapons/skins";
+// let URL = "https://valorant-api.com/v1/weapons/skins";
 
-async function getData(URL) {
-  try {
-    const response = await fetch(URL);
-    const data = await response.json();
-    document.getElementById("api-response").textContent = data.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-console.log(data);
-
-// let response = await fetch(url);
-// if (response.ok) {
-//   let json = await response.json();
-// } else {
-//   alert("HTTP-Error: " + response.status);
+// async function getData(URL) {
+//   try {
+//     const response = await fetch(URL);
+//     const data = await response.json();
+//     document.getElementById("api-response").textContent = data.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
 // }
-
-console.log(data.displayName);
+// console.log(data);
 
 // displayIcon is img
 // displayName weapon name|
@@ -37,3 +28,7 @@ console.log(data.displayName);
 //     )
 //   );
 // }
+
+fetch("https://valorant-api.com/v1/weapons/skins")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
