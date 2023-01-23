@@ -32,3 +32,11 @@
 fetch("https://valorant-api.com/v1/weapons/skins")
   .then((response) => response.json())
   .then((data) => console.log(data));
+
+let foods = fetch("https://valorant-api.com/v1/weapons/skins")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+function sort() {
+  foods.foreach((skin) => console.log(data.uuid));
+}
