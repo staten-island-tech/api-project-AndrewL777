@@ -1,15 +1,14 @@
-// let URL = "https://valorant-api.com/v1/weapons/skins";
+const APIURL = "https://valorant-api.com/v1/weapons/skins";
 
-// async function getData(URL) {
-//   try {
-//     const response = await fetch(URL);
-//     const data = await response.json();
-//     document.getElementById("api-response").textContent = data.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// console.log(data);
+async function getData() {
+    const response = await fetch(APIURL);
+    const data = await response.json();
+ data.forEach(skin => console.log(data))
+  
+}
+
+// getData();
+
 
 // displayIcon is img
 // displayName weapon name|
@@ -29,14 +28,11 @@
 //   );
 // }
 
-fetch("https://valorant-api.com/v1/weapons/skins")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
-let foods = fetch("https://valorant-api.com/v1/weapons/skins")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
 
-function sort() {
-  foods.foreach((skin) => console.log(data.uuid));
-}
+
+// fetch("https://valorant-api.com/v1/weapons/skins")
+//   .then(res => {return res.json();})
+//   .then(data => {console.log(data);})
+//   .catch(error => console.log(error));
+
