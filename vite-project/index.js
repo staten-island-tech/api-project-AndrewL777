@@ -1,38 +1,42 @@
 const APIURL = "https://valorant-api.com/v1/weapons/skins";
 
-async function getData() {
+async function getInfo() {
     const response = await fetch(APIURL);
-    const data = await response.json();
- data.forEach(skin => console.log(data))
-  
+    const Info = await response.json();
+    console.log(Info);
+    Info.data.forEach((skin)=> document.getElementById("display").insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="card">
+        <h1 class="all">${skin.displayName}</h1>
+  <img class src="${skin.displayIcon}" /><img>
+ 
+  </div>
+  `));
+       
 }
 
-// getData();
+getInfo();
 
+// function Rifles() {
+// Info.data.filter((skin)=>skin.displayName.includes(Phantom, Vandal).document.getElementById("display").insertAdjacentHTML(
+//     "beforeend",
+//     `
+//     <div class="card">
+//     <h1 class="all">${skin.displayName}</h1>
+// <img class src="${skin.displayIcon}" /><img>
 
-// displayIcon is img
-// displayName weapon name|
-
-// function Allskins() {
-//   data.forEach((skin) =>
-//     Dom.men.insertAdjacentHTML(
-//       "beforeend",
-//       `
-//         <div class="card">
-//         <h1 class="all">${data.displayName}</h1>
-//   <img class src="${data.displayicon}" /><img>
-
-//   </div>
-//   `
-//     )
-//   );
+// </div>
+// `));
+   
 // }
 
+async function Rifles() {
+    const response = await fetch(APIURL);
+    const Info = await response.json();
+    Info.data.filter((skin)=>Info.data.displayName.includes("Phantom","Vandal")).forEach((skin)=> console.log(displayName))
+       
+    }
 
 
-
-// fetch("https://valorant-api.com/v1/weapons/skins")
-//   .then(res => {return res.json();})
-//   .then(data => {console.log(data);})
-//   .catch(error => console.log(error));
-
+Rifles();
