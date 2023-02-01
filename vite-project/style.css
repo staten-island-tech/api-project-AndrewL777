@@ -5,7 +5,7 @@ body {
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
      }
-  #display {
+  #men {
     display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,16 +15,17 @@ body {
    .card {
     text-align: center;
     font-family: Georgia, "Times New Roman", Times, serif;
-    width: 29%;
-    height: 50vh;
+    width: 26%;
     border: 2px solid black;
     box-shadow: 3px 3px 10px;
     border-radius: 20px;
     margin-bottom: 40px;
     margin-top: 40px;
+    padding: 2rem;
   }
 
-#buttons {
-  width: 50%;
- 
+.images {
+  width: 90%;
+  
 }
+
