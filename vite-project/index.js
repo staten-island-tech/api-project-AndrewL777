@@ -11,143 +11,154 @@ const Dom = {
 
 const APIURL = "https://valorant-api.com/v1/weapons/skins";
 
-
-
 const mendiv = document.querySelector("#men");
-
 
 document.getElementById("rifle").addEventListener("click", function () {
   mendiv.innerHTML = ``;
-});
-
-
-Dom.Rifle.addEventListener("click", function () {
   rifleGuns();
 });
+
+
 
 async function rifleGuns() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/Rifles/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/Rifles/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
-
-
 
 document.getElementById("side").addEventListener("click", function () {
   mendiv.innerHTML = ``;
-});
-
-Dom.Side.addEventListener("click", function () {
   sideGuns();
 });
+
+
 
 async function sideGuns() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/Sidearms/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/Sidearms/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
-
-
-
-
-
 
 document.querySelector("#all").addEventListener("click", function () {
   mendiv.innerHTML = "";
-});
-
-Dom.all.addEventListener("click", function () {
   allGuns();
 });
+
+
 
 async function allGuns() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/Content/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/Content/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
-
 
 document.querySelector("#sub").addEventListener("click", function () {
   mendiv.innerHTML = "";
-});
-
-Dom.Sub.addEventListener("click", function () {
   subGuns();
 });
+
+
 
 async function subGuns() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/SubMachineGuns/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/SubMachineGuns/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
-
-
 
 document.querySelector("#sniper").addEventListener("click", function () {
   mendiv.innerHTML = "";
 
- Dom.Sniper.addEventListener("click", function () {
-    sniperGuns();
-  });
+  sniperGuns();
+});
 
-  async function sniperGuns() {
-    const response = await fetch(APIURL);
-    const Info = await response.json();
-    console.log(Info);
-    Info.data
-      .filter((skin) => skin.assetPath.includes("/SniperRifles/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
+async function sniperGuns() {
+  const response = await fetch(APIURL);
+  const Info = await response.json();
+  console.log(Info);
+  Info.data
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/SniperRifles/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
       document.getElementById("men").insertAdjacentHTML(
         "beforeend",
         `
@@ -159,91 +170,71 @@ document.querySelector("#sniper").addEventListener("click", function () {
     `
       )
     );
-  }
-  
+}
 
-
-});
 document.querySelector("#machine").addEventListener("click", function () {
   mendiv.innerHTML = "";
-});
-
-Dom.Machine.addEventListener("click", function () {
   machineGuns();
 });
+
+
 
 async function machineGuns() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/HvyMachineGuns/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/HvyMachineGuns/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
 
 document.querySelector("#knife").addEventListener("click", function () {
   mendiv.innerHTML = "";
-});
-
-Dom.Knives.addEventListener("click", function () {
   meeleKnives();
 });
+
+
 
 async function meeleKnives() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/Melee/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/Melee/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
-
-
-// Rifles();
-
-// Info.data
-//     .filter((skin) => skin.assetPath.includes("/Content/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") )
-
-// async function Vegans() {
-//   const response = await fetch(APIURL);
-//   const Info = await response.json();
-//   console.log(Info);
-//   Info.data
-//     .filter((skin) => skin.assetPath.includes("/Rifles/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-//     document.getElementById("display").insertAdjacentHTML(
-//       "beforeend",
-//       `
-//         <div class="card">
-//         <h2 class="all">${skin.displayName}</h2>
-//   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
- 
-//   </div>
-//   `
-//     )
-//   );
-// }
-
-
 
 
 async function getInfo() {
@@ -251,18 +242,24 @@ async function getInfo() {
   const Info = await response.json();
   console.log(Info);
   Info.data
-    .filter((skin) => skin.assetPath.includes("/Content/") && !skin.displayName.includes("Standard") && !skin.displayName.includes("Random") ).forEach((skin)=>
-    document.getElementById("men").insertAdjacentHTML(
-      "beforeend",
-      `
+    .filter(
+      (skin) =>
+        skin.assetPath.includes("/Content/") &&
+        !skin.displayName.includes("Standard") &&
+        !skin.displayName.includes("Random")
+    )
+    .forEach((skin) =>
+      document.getElementById("men").insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="card">
         <h2 class="all">${skin.displayName}</h2>
   <img class = "images" src="${skin.displayIcon}"  alt = "Image of ${skin.displayName}"  >
  
   </div>
   `
-    )
-  );
+      )
+    );
 }
 
 getInfo();
