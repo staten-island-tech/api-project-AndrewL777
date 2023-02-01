@@ -4,14 +4,7 @@ body {
     font-weight: bold;
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .btn {
-    height: 50px;
-    width: 100px;
-    margin-bottom: 100px;
-    background-color: white;
-    color: black;
-   }
+     }
   #display {
     display: flex;
   flex-direction: row;
@@ -23,6 +16,15 @@ body {
     text-align: center;
     font-family: Georgia, "Times New Roman", Times, serif;
     width: 29%;
-    border-radius: 5rem;
-    border-color: black;
+    height: 50vh;
+    border: 2px solid black;
+    box-shadow: 3px 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
   }
+
+#buttons {
+  width: 50%;
+ 
+}
