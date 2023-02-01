@@ -196,10 +196,10 @@ document.querySelector("#knife").addEventListener("click", function () {
 });
 
 Dom.Knives.addEventListener("click", function () {
-  machineGuns();
+  meeleKnives();
 });
 
-async function machineGuns() {
+async function meeleKnives() {
   const response = await fetch(APIURL);
   const Info = await response.json();
   console.log(Info);
